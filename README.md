@@ -26,8 +26,8 @@ from comdet import comdet
 result = comdet.detect("input", debug=True)
 print result
 
-Input file
--------------
+####Input file
+
 Input files  contains space separated src dst pair of graph nodes
 eg.
 ```shell
@@ -51,8 +51,8 @@ DL4 DL9
 .
 .
 ```
-Output
--------------
+####Output
+
 Output is nested list of community structure.
 ```shell
 [[[[['DL23', 'DL19', 'DL27']], [['DL28', 'DL26', 'DL20'], ['DL44'], ['DL38', 'DL46', 'DL42'], ['DL10', 'DL6', 'DL1', 'DL2', 'DL0'], ['DL34', 'DL37']]]]]
