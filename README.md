@@ -30,7 +30,7 @@ print result
 ```
 
 ####Interface.
-Followinf iterface is used to interact with comdet package
+Following iterface is used to interact with comdet package
 comdet.detect(inputfile, nop = -1, debug = False)
 * inputfile - The inputfile to the package.
 * nop       - number of passes upto which the community detection will run. by default it is infinity.
