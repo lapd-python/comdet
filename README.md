@@ -21,11 +21,12 @@ or just download the package from here and use it as stand alone.
 
 Usage
 -------------
-
+####Sample python file
+```
 from comdet import comdet
 result = comdet.detect("input", debug=True)
 print result
-
+```
 ####Input file
 
 Input files  contains space separated src dst pair of graph nodes
