@@ -1,10 +1,11 @@
 import os
+import shutil
 import wrapper
 import community
 
 # inputfile name and no of passes
 def detect(filename, nop = -1, debug = False):
-     fileinput = open('input', 'r')
+     fileinput = open(filename, 'r')
      lines = fileinput.readlines()
      p1 = wrapper.Pool()
      for line in lines:
@@ -16,9 +17,12 @@ def detect(filename, nop = -1, debug = False):
         if not n1:
             n1 = p1.add_node(split[0])
         n1.add_elem(split[1])
-     if not os.path.exists('tmp'):
-        os.mkdir('tmp')
-     os.chdir('tmp')
+     if os.path.exists('/tmp/cmodet_tmp'):
+        shutil.rmtree("/tmp/cmodet_tmp")
+     os.mkdir('/tmp/cmodet_tmp')
+     os.chdir('/tmp/cmodet_tmp')
      com_t = community.community()
      result = com_t.start(p1, nop, debug)
+     if os.path.exists('/tmp/cmodet_tmp'):
+        shutil.rmtree("/tmp/cmodet_tmp")
      return result
