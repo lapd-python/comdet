@@ -1,5 +1,6 @@
 comdet
 ======
+Comdet stands for community detection.
 In the study of complex networks, a network is said to have community structure if the nodes of the network can be easily grouped into (potentially overlapping) sets of nodes such that each set of nodes is densely connected internally.
 
 comdet is used to detect community among graph nodes. Its based on lovain method
@@ -27,6 +28,14 @@ from comdet import comdet
 result = comdet.detect("input", debug=True)
 print result
 ```
+
+####Interface.
+Followinf iterface is used to interact with comdet package
+comdet.detect(inputfile, nop = -1, debug = False)
+* inputfile - The inputfile to the package.
+* nop       - number of passes upto which the community detection will run. by default it is infinity.
+* debug     - used to debug information
+
 ####Input file
 
 Input files  contains space separated src dst pair of graph nodes
