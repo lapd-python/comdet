@@ -57,7 +57,7 @@ Output is nested list of community structure.
 ```shell
 [[[[['DL23', 'DL19', 'DL27']], [['DL28', 'DL26', 'DL20'], ['DL44'], ['DL38', 'DL46', 'DL42'], ['DL10', 'DL6', 'DL1', 'DL2', 'DL0'], ['DL34', 'DL37']]]]]
 ```
-
+```
 The above output consist of 4 passes.
 Pass 1 => 
 1Group1 - ['DL23', 'DL19', 'DL27']]
@@ -80,3 +80,4 @@ Pass4 =>
 Pass5 => 
 5Group1 - [4Group1]
 Now as the number of community in pass4 and Pass5 are same the processing stops and pass 4 output is taken.
+```
