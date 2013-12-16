@@ -4,8 +4,8 @@ Comdet stands for community detection.
 In the study of complex networks, a network is said to have community structure if the nodes of the network can be easily grouped into (potentially overlapping) sets of nodes such that each set of nodes is densely connected internally.
 
 comdet is used to detect community among graph nodes. Its based on lovain method
-
-
+Pypi page for comdet module is at 
+   https://pypi.python.org/pypi/comdet/0.2
 Installation
 -------------
 Easy install
