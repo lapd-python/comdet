@@ -6,6 +6,10 @@ In the study of complex networks, a network is said to have community structure 
 comdet is used to detect community among graph nodes. Its based on lovain method
 Pypi page for comdet module is at 
    https://pypi.python.org/pypi/comdet/0.2
+   
+It is based on louvain method for community detection problem in given graph nodes
+   https://sites.google.com/site/findcommunities/
+   
 Installation
 -------------
 Easy install
