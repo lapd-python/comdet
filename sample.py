@@ -1,3 +1,3 @@
 from comdet import comdet
-result = comdet.detect("input", debug=True)
+result = comdet.detect("inp", debug=True)
 print result

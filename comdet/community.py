@@ -272,6 +272,23 @@ class community:
         fw.close()
         self.phase1(iter=1, nep = -1) 
 
+    def getposition(self, communityno):
+        communityFile = 'PASS%d' % self.iter
+        fr = open(communityFile, 'r')
+        lines = fr.readlines()
+        noc = self.getint(lines[0])
+        line_pos = 1
+        # For each community
+        for i in range(noc):
+            if (i == communityno):
+                return line_pos
+            non = self.getint(lines[line_pos])
+            line_pos += 1 
+            # For each node
+            for j in range(non):
+                node_name = lines[line_pos].strip()
+                line_pos += 1
+
     # This phase detects which community are close, grouping together nodes into 1 community
     def phase1(self, iter, nep):
         self.iter = iter
@@ -293,6 +310,7 @@ class community:
             noc = self.getint(lines[0])
             line_pos = 1
             # For each community
+            cuts = 0
             for i in range(noc):
                 non = self.getint(lines[line_pos])
                 line_pos += 1 
@@ -304,10 +322,13 @@ class community:
                     if self.migrate_node(communityFile, node_name, iter):
                         # If node is migrated we need to restart the process with while loop 
                         lines = open(communityFile, 'r').readlines()
-                        self.debugger(open(communityFile).readlines())
+                        noc = self.getint(lines[0])
+                        line_pos = self.getposition(i - cuts) # get the position of ith commmunity
+                        #self.debugger(open(communityFile).readlines())
+                        cuts += 1
                         flag = 1
                         break
-                if flag: break   # breaks the 2nd for loop
+                #if flag: break   # breaks the 2nd for loop
         self.phase2(iter, nec)
 
     # This Phase build new community by grouping previous phase nodes into 1 community
