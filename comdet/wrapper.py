@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class Node:
     sno = 0
     node_name = ""
@@ -9,7 +11,7 @@ class Node:
         self.elems.append(elem)
 
     def no_of_elems(self):
-        return len(elems)
+        return len(self.elems)
 
     def display_elems(self):
         for e in self.elems:
