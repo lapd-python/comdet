@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Comdet by pankajr141</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Comdet</h1>
+        <p class="header">The purpose of packge is to detect relationship between graph nodes. It detects the overall community structure</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/pankajr141/comdet/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/pankajr141/comdet/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/pankajr141/comdet">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/pankajr141">pankajr141</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="comdet" class="anchor" href="#comdet" aria-hidden="true"><span class="octicon octicon-link"></span></a>comdet</h1>
+
+<p>Comdet stands for community detection.
+In the study of complex networks, a network is said to have community structure if the nodes of the network can be easily grouped into (potentially overlapping) sets of nodes such that each set of nodes is densely connected internally.</p>
+
+<p>comdet is used to detect community among graph nodes. Its based on lovain method
+Pypi page for comdet module is at 
+   <a href="https://pypi.python.org/pypi/comdet/">https://pypi.python.org/pypi/comdet/</a></p>
+
+<p>It is based on louvain method for community detection problem in given graph nodes
+   <a href="https://sites.google.com/site/findcommunities/">https://sites.google.com/site/findcommunities/</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Easy install</p>
+
+<div class="highlight highlight-shell"><pre>easy_install comdet</pre></div>
+
+<p>Pip:</p>
+
+<div class="highlight highlight-shell"><pre><span class="pl-vo">$pip</span> install comdet</pre></div>
+
+<p>or just download the package from here and use it as stand alone.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h4>
+<a id="sample-python-file" class="anchor" href="#sample-python-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample python file</h4>
+
+<pre><code>from comdet import comdet
+result = comdet.detect("input", debug=True)
+print result
+</code></pre>
+
+<h4>
+<a id="interface" class="anchor" href="#interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Interface.</h4>
+
+<p>Following iterface is used to interact with comdet package</p>
+
+<pre><code>comdet.detect(inputfile, nop = -1, debug = False)
+</code></pre>
+
+<ul>
+<li>inputfile - The inputfile to the package.</li>
+<li>nop       - number of passes upto which the community detection will run. by default it is infinity.</li>
+<li>debug     - used to debug information</li>
+</ul>
+
+<h4>
+<a id="input-file" class="anchor" href="#input-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Input file</h4>
+
+<p>Input files  contains space separated src dst pair of graph nodes
+eg.</p>
+
+<div class="highlight highlight-shell"><pre>DL0 DL4
+DL3 DL6
+DL8 DL2
+DL4 DL3
+DL2 DL2
+DL3 DL4
+DL2 DL8
+DL8 DL4
+DL0 DL7
+DL10 DL4
+DL9 DL6
+DL8 DL6
+DL2 DL8
+DL9 DL10
+DL8 DL8
+DL4 DL9
+<span class="pl-s3">.</span>
+<span class="pl-s3">.</span>
+<span class="pl-s3">.</span></pre></div>
+
+<h4>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h4>
+
+<p>Output is nested list of community structure.</p>
+
+<div class="highlight highlight-shell"><pre>[[[[[<span class="pl-s1"><span class="pl-pds">'</span>DL23<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL19<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL27<span class="pl-pds">'</span></span>]], [[<span class="pl-s1"><span class="pl-pds">'</span>DL28<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL26<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL20<span class="pl-pds">'</span></span>], [<span class="pl-s1"><span class="pl-pds">'</span>DL44<span class="pl-pds">'</span></span>], [<span class="pl-s1"><span class="pl-pds">'</span>DL38<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL46<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL42<span class="pl-pds">'</span></span>], [<span class="pl-s1"><span class="pl-pds">'</span>DL10<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL6<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL1<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL2<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL0<span class="pl-pds">'</span></span>], [<span class="pl-s1"><span class="pl-pds">'</span>DL34<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>DL37<span class="pl-pds">'</span></span>]]]]]</pre></div>
+
+<pre><code>The above output consist of 4 passes.
+Pass 1 =&gt; 
+1Group1 - ['DL23', 'DL19', 'DL27']]
+1Group2 - ['DL28', 'DL26', 'DL20']
+1Group3 - ['DL44']
+1Group4 - ['DL10', 'DL6', 'DL1', 'DL2', 'DL0']
+1Group5 - ['DL34', 'DL37']
+
+Pass2  =&gt; 
+Now nodes of previous pass group together to form mode strong community.
+2Group1 - [1Group1]
+2Group2 - [1Group2, 1Group3, 1Group4, 1Group5]
+
+Pass3  =&gt;
+3Group1 - [2Group1, 2Group3]
+
+Pass4 =&gt; 
+4Group1 - [3Group1]
+
+Pass5 =&gt; 
+5Group1 - [4Group1]
+Now as the number of community in pass4 and Pass5 are same the processing stops and pass 4 output is taken.
+</code></pre>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
